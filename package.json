@@ -1,5 +1,6 @@
 {
   "name": "eternal-eclipse",
+  "homepage": "https://dnd-5e.github.io/eternal-eclipse/dev/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
