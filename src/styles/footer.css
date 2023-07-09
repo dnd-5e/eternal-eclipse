@@ -1,0 +1,8 @@
+/* Footer bar styles */
+/* Basic Footer bar styles */
+.footer {
+  background: rgba(33, 33, 33, 1) !important;
+  min-height: var(--footer-height) !important;
+  max-height: var(--footer-height) !important;
+  justify-content: center;
+}

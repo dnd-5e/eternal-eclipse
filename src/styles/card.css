@@ -1,0 +1,15 @@
+/* Card styles */
+/* Link card styles */
+.linkcard {
+  background: rgb(85, 85, 85) !important;
+  width: 100%;
+}
+/* Rank card styles */
+.rankcard {
+  background: rgb(85, 85, 85) !important;
+}
+.rankcard img {
+  border: 2px double rgba(171, 150, 111, 1);
+  width: max-content;
+  margin: 10px auto 0px auto;
+}
