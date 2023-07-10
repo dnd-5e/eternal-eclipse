@@ -10,11 +10,13 @@ import {
 } from "@mui/material";
 import * as React from "react";
 import logo from "../assets/pics/placeholders/imgPlaceholder.png";
-import {Dia} from "../assets/components/dialog";
+import { Dia } from "../assets/components/dialog";
+import { NavLink } from "react-router-dom";
 /** Variables */
+const pages = ["/eternal-eclipse/dev/"];
 const images = require.context("../assets/pics/ranks/", true);
 const brandname = "Eternal Eclipse Security Forces - E.E.S.F.";
-const left = ["Home", "Ranks"];
+const left = ["Home", "Ranks", "Characters"];
 const right = [];
 /** */
 const Navigation = () => {
@@ -43,14 +45,18 @@ const Navigation = () => {
           sx={{ display: { xs: "none", md: "flex" } }}
           className="navigation"
         >
-          <IconButton sx={{ flexGrow: 1 }} className="navigation brand">
+          <IconButton sx={{ flexGrow: 1 }} className="navigation brand" component={NavLink} to={pages+""}>
             <img src={logo} alt="Brand logo" className="appbar-brand" />
             <Typography component="h1" className="h1" sx={{ flexGrow: 1 }}>
               {brandname}
             </Typography>
           </IconButton>
           {left.map((link, i) => (
-            <Button key={link + i}>
+            <Button
+              key={link + i}
+              component={NavLink}
+              to={`${link==="Home"?pages+"":pages+link}`}
+            >
               <Typography variant="h4" className="h1">
                 {link}
               </Typography>

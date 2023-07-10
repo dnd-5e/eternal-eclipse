@@ -6,7 +6,7 @@
   max-height: var(--navigation-height) !important;
   margin: 0;
 }
-.navigation.brand{
+.navigation.brand {
   max-width: max-content;
 }
 /* Navigation bar brand image and text */

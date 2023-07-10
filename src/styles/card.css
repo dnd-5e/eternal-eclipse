@@ -13,3 +13,12 @@
   width: max-content;
   margin: 10px auto 0px auto;
 }
+/* Rank card styles */
+.charactercard {
+  background: rgb(85, 85, 85) !important;
+}
+.charactercard img {
+  border: 2px double rgba(171, 150, 111, 1);
+  width: calc(100% - 4px);
+  margin: 0px auto 0px auto;
+}
