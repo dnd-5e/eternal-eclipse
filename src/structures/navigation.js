@@ -16,7 +16,7 @@ import { NavLink } from "react-router-dom";
 const pages = ["/eternal-eclipse/dev/"];
 const brandname = "Eternal Eclipse Security Forces - E.E.S.F.";
 const left = ["Home", "Ranks", "Characters"];
-const right = ["Boi"];
+const right = [];
 /** */
 const Navigation = () => {
   /** */
