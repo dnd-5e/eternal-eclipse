@@ -24,8 +24,17 @@ const Navigation = () => {
   const [navMenu, setNavMenu] = React.useState(null);
   const [navSubMenu, setNavSubMenu] = React.useState(null);
   const [navSubMenuLowest, setNavSubMenuLowest] = React.useState(null);
+  const medium = useMediaQuery(useTheme().breakpoints.up("md"));
   /** */
   const [menu, setMenu] = React.useState(null);
+  /** */
+  React.useEffect(() => {
+    setTimeout(1);
+    setMenu(null);
+    setNavMenu(null);
+    setNavSubMenu(null);
+    setNavSubMenuLowest(null);
+  }, [medium]);
   /** */
   return (
     <>
@@ -46,6 +55,12 @@ const Navigation = () => {
               className="navigation brand"
               component={NavLink}
               to={pages + ""}
+              onClick={() => {
+                setMenu(null);
+                setNavMenu(null);
+                setNavSubMenu(null);
+                setNavSubMenuLowest(null);
+              }}
             >
               <img src={logo} alt="Brand logo" className="appbar-brand" />
               <Typography component="h1" className="h1" sx={{ flexGrow: 1 }}>
@@ -84,6 +99,9 @@ const Navigation = () => {
             aria-describedby={"menu"}
             sx={{ display: { xs: "flex", md: "none" } }}
             onMouseEnter={(event) => {
+              setNavMenu(null);
+              setNavSubMenu(null);
+              setNavSubMenuLowest(null);
               setMenu(event.currentTarget);
             }}
           >
@@ -94,23 +112,12 @@ const Navigation = () => {
           <Popper
             placement={"bottom-end"}
             sx={{ display: { xs: "flex", md: "none" } }}
-            onClose={() => {
-              setMenu(null);
-            }}
             className="menu"
             anchorEl={menu}
             open={Boolean(menu)}
             id="menu"
           >
-            <Paper
-              className="menu"
-              onMouseLeave={() => {
-                setMenu(null);
-                setNavMenu(null);
-                setNavSubMenu(null);
-                setNavSubMenuLowest(null);
-              }}
-            >
+            <Paper className="menu">
               <MapItem
                 name="left"
                 Map={Left}
@@ -135,8 +142,8 @@ const Navigation = () => {
                 setNavSubMenu={setNavSubMenu}
                 navSubMenuLowest={navSubMenuLowest}
                 setNavSubMenuLowest={setNavSubMenuLowest}
-                show={useMediaQuery(useTheme().breakpoints.up("md"))}
-                menu={false}
+                show={useMediaQuery(useTheme().breakpoints.down("md"))}
+                menu={true}
               />
             </Paper>
           </Popper>

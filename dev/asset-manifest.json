@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/eternal-eclipse/dev/static/css/main.91cfd6b4.css",
-    "main.js": "/eternal-eclipse/dev/static/js/main.ed0125e1.js",
+    "main.css": "/eternal-eclipse/dev/static/css/main.eace1fd2.css",
+    "main.js": "/eternal-eclipse/dev/static/js/main.3939198e.js",
     "static/media/soldier.png": "/eternal-eclipse/dev/static/media/soldier.885ef4117289431af622.png",
     "static/media/Commander Shumway.png": "/eternal-eclipse/dev/static/media/Commander Shumway.c95342406bdb04f8b7e5.png",
     "static/media/092Senior Colonel.png": "/eternal-eclipse/dev/static/media/092Senior Colonel.410f91e37bbd355cbc22.png",
@@ -47,11 +47,11 @@
     "static/media/060Initiate Lieutenant.png": "/eternal-eclipse/dev/static/media/060Initiate Lieutenant.84c7ef8495936a3a3467.png",
     "static/media/imgPlaceholder.png": "/eternal-eclipse/dev/static/media/imgPlaceholder.f787df485c16be80df57.png",
     "index.html": "/eternal-eclipse/dev/index.html",
-    "main.91cfd6b4.css.map": "/eternal-eclipse/dev/static/css/main.91cfd6b4.css.map",
-    "main.ed0125e1.js.map": "/eternal-eclipse/dev/static/js/main.ed0125e1.js.map"
+    "main.eace1fd2.css.map": "/eternal-eclipse/dev/static/css/main.eace1fd2.css.map",
+    "main.3939198e.js.map": "/eternal-eclipse/dev/static/js/main.3939198e.js.map"
   },
   "entrypoints": [
-    "static/css/main.91cfd6b4.css",
-    "static/js/main.ed0125e1.js"
+    "static/css/main.eace1fd2.css",
+    "static/js/main.3939198e.js"
   ]
 }

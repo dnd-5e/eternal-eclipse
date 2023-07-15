@@ -1,34 +1,45 @@
-import { Typography, Link, Popper, Paper, } from "@mui/material";
+import { Typography, Link, Popper, Paper } from "@mui/material";
 import * as React from "react";
 import { NavLink } from "react-router-dom";
+/** Load images */
+const ranks = require.context("../pics/ranks/", true);
 /** */
 const Left = [
   {
     title: "Home",
-    subMenu: null,
+    subMenu: [],
   },
   {
     title: "Security Forces",
     subMenu: [
       {
         title: "Ranks",
-        subMenu: null,
+        subMenu: [],
       },
       {
         title: "Characters",
-        subMenu: null,
+        subMenu: [],
       },
       {
         title: "Weapons",
-        subMenu: null,
+        subMenu: [],
       },
       {
         title: "Vehicles",
-        subMenu: null,
+        subMenu: [],
       },
     ],
   },
 ];
+/** */
+ranks.keys().forEach((element) => {
+  Left.filter((obj) => obj.title === "Security Forces")[0]
+    .subMenu.filter((obj) => obj.title === "Ranks")[0]
+    .subMenu.push({
+      title: element.substring(5).replace(".png", "").replace(" ", "-"),
+      subMenu: [],
+    });
+});
 const Right = [];
 /** */
 const MapItem = ({
@@ -51,6 +62,8 @@ const MapItem = ({
             aria-describedby={link.title}
             onMouseEnter={(e) => {
               setNavMenu(e.currentTarget);
+              setNavSubMenu(null);
+              setNavSubMenuLowest(null);
             }}
             to={`${link.title === "Home" ? pages + "" : pages + link.title}`}
             key={name + "-btn-" + link.title + "-" + i}
@@ -61,8 +74,9 @@ const MapItem = ({
               {link.title}
             </Typography>
           </Link>
-          {link.subMenu !== null ? (
+          {link.subMenu.lenght !== 0 ? (
             <Popper
+              keepMounted
               placement={menu ? "left-start" : "bottom-start"}
               key={name + "-popover-" + link.title}
               id={link.title}
@@ -75,21 +89,16 @@ const MapItem = ({
                   : false
               }
               anchorEl={navMenu}
-              onClose={() => {
-                setNavMenu(null);
-              }}
             >
-              <Paper
-                className="menu"
-                onMouseLeave={() => {
-                  setNavMenu(null);
-                }}
-              >
+              <Paper className="menu">
                 {link.subMenu.map((link, i) => (
                   <React.Fragment key={name + "subFragment-" + link.title}>
                     <Link
                       aria-describedby={link.title}
-                      onMouseEnter={(e) => setNavSubMenu(e.currentTarget)}
+                      onMouseEnter={(e) => {
+                        setNavSubMenu(e.currentTarget);
+                        setNavSubMenuLowest(null);
+                      }}
                       to={`${
                         link.title === "Home" ? pages + "" : pages + link.title
                       }`}
@@ -101,8 +110,9 @@ const MapItem = ({
                         {link.title}
                       </Typography>
                     </Link>
-                    {link.subMenu !== null ? (
+                    {link.subMenu.lenght !== 0 ? (
                       <Popper
+                        keepMounted
                         placement={menu ? "left-start" : "right-start"}
                         key={name + "-subPopper-" + link.title}
                         id={link.title}
@@ -116,14 +126,8 @@ const MapItem = ({
                             : false
                         }
                         anchorEl={navSubMenu}
-                        onClose={() => {
-                          setNavSubMenu(null);
-                        }}
                       >
-                        <Paper
-                          className="menu"
-                          onMouseLeave={() => setNavSubMenu(null)}
-                        >
+                        <Paper className="menu">
                           {link.subMenu.map((link, i) => (
                             <React.Fragment
                               key={name + "lowerSubFragment-" + link.title}
@@ -148,8 +152,9 @@ const MapItem = ({
                                   {link.title}
                                 </Typography>
                               </Link>
-                              {link.subMenu !== null ? (
+                              {link.subMenu.lenght !== 0 ? (
                                 <Popper
+                                  keepMounted
                                   placement={
                                     menu ? "left-start" : "right-start"
                                   }
@@ -167,16 +172,8 @@ const MapItem = ({
                                       : false
                                   }
                                   anchorEl={navSubMenuLowest}
-                                  onClose={() => {
-                                    setNavSubMenuLowest(null);
-                                  }}
                                 >
-                                  <Paper
-                                    className="menu"
-                                    onMouseLeave={() =>
-                                      setNavSubMenuLowest(null)
-                                    }
-                                  >
+                                  <Paper className="menu">
                                     {link.subMenu.map((link, i) => (
                                       <React.Fragment
                                         key={

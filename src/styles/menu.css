@@ -1,9 +1,11 @@
 /* Menu styles */
 .menu > .MuiMenu-paper {
-    background-color: rgba(65, 65, 65, 1);
+  background-color: rgba(65, 65, 65, 1);
 }
 
 .menu > .MuiPaper-root {
-    background-color: rgba(65, 65, 65, 1);
-    padding: 0px 5px;
+  background-color: rgba(65, 65, 65, 1);
+  padding: 0px 5px;
+  max-height: 15rem;
+  overflow: auto;
 }
