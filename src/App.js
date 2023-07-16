@@ -1,17 +1,24 @@
-import * as Components from "./assets/components/card";
-import * as Pages from "./pages/rank";
+/** Imports */
+/** Basic */
+import { Routes, Route } from "react-router-dom";
+import * as React from "react";
+/** Custom */
+/** Structures */
 import Navigation from "./structures/navigation";
 import Footer from "./structures/footer";
 import Body from "./structures/body";
-import * as React from "react";
-import { Routes, Route } from "react-router-dom";
+/** Pages */
+import * as Pages from "./pages/rank";
+/** Components */
+import * as Components from "./assets/components/card";
 import { FullScreenModal } from "./structures/modal";
+/** Pictures */
 import placeholder from "./assets/pics/placeholders/imgPlaceholder.png";
-/** */
+/** Define App structure */
 const App = () => {
-  /** */
-  /** Website title */
+  /** Website title / Tab name */
   document.title = "Eternal Eclipse";
+  /** States */
   /** */
   const [modal, setModal] = React.useState(false);
   /** */
@@ -19,9 +26,7 @@ const App = () => {
   const [name, setName] = React.useState("     Placeholder");
   /** */
   const [expanded, setExpanded] = React.useState(false);
-  /** */
-  const test = "Ranks";
-  /** */
+  /** Render Structure */
   return (
     <>
       <Navigation />
@@ -59,5 +64,5 @@ const App = () => {
     </>
   );
 };
-/** */
+/** Exports */
 export default App;
