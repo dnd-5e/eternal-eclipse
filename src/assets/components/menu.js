@@ -76,7 +76,6 @@ const MapItem = ({
           </Link>
           {link.subMenu.lenght !== 0 ? (
             <Popper
-              keepMounted
               placement={menu ? "left-start" : "bottom-start"}
               key={name + "-popover-" + link.title}
               id={link.title}
@@ -112,7 +111,6 @@ const MapItem = ({
                     </Link>
                     {link.subMenu.lenght !== 0 ? (
                       <Popper
-                        keepMounted
                         placement={menu ? "left-start" : "right-start"}
                         key={name + "-subPopper-" + link.title}
                         id={link.title}
@@ -154,7 +152,6 @@ const MapItem = ({
                               </Link>
                               {link.subMenu.lenght !== 0 ? (
                                 <Popper
-                                  keepMounted
                                   placement={
                                     menu ? "left-start" : "right-start"
                                   }

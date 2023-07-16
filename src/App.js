@@ -12,9 +12,16 @@ const App = () => {
   /** */
   /** Website title */
   document.title = "Eternal Eclipse";
+  /** */
   const [modal, setModal] = React.useState(false);
+  /** */
   const [image, setImage] = React.useState(placeholder);
   const [name, setName] = React.useState("     Placeholder");
+  /** */
+  const [expanded, setExpanded] = React.useState(false);
+  /** */
+  const test = "Ranks";
+  /** */
   return (
     <>
       <Navigation />
@@ -23,6 +30,8 @@ const App = () => {
         image={image}
         name={name}
         setModal={setModal}
+        expanded={expanded}
+        setExpanded={setExpanded}
       />
       <Routes>
         <Route path="/eternal-eclipse/dev/" element={<Body />} />

@@ -10,8 +10,8 @@
 }
 .rankcard img {
   border: 2px double rgba(171, 150, 111, 1);
-  width: max-content;
   margin: 10px auto 0px auto;
+  width: max-content;
 }
 /* Rank card styles */
 .charactercard {
@@ -19,21 +19,26 @@
 }
 .charactercard img {
   border: 2px double rgba(171, 150, 111, 1);
-  width: calc(100% - 4px);
   margin: 0px auto 0px auto;
+  width: calc(100% - 4px);
 }
 /* Rank card styles */
 .modal {
   background: rgb(85, 85, 85) !important;
-  position: absolute;
-  top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
-  padding: 0px 50px;
-  width: fit-content;
+  position: absolute;
+  overflow: auto;
+  max-height: 80vh;
+  width: 25rem;
+  left: 50%;
+  top: 50%;
 }
 .modal img {
   border: 2px double rgba(171, 150, 111, 1);
-  width: max-content;
   margin: 10px auto 0px auto;
+  width: max-content;
+}
+.modalCollapse{
+  overflow: auto !important;
+  max-height: 50vh;
 }
